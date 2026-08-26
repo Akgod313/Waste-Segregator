@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { supabase } from './lib/supabase';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { 
   DndContext, 
   useDraggable, 
@@ -64,7 +64,7 @@ function DroppableBin({ id, title, emoji }: { id: Category; title: string; emoji
 }
 
 // --- ANIMATION VARIANTS ---
-const pageVariants = {
+const pageVariants: Variants = {
   initial: { opacity: 0, y: 20, scale: 0.98 },
   animate: { opacity: 1, y: 0, scale: 1, transition: { type: 'spring', stiffness: 200, damping: 20 } },
   exit: { opacity: 0, y: -20, scale: 0.95, transition: { duration: 0.2 } }

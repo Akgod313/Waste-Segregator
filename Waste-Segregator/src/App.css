@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Playfair+Display:wght@600;700&display=swap');
 
+/* Universal Box Sizing Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 :root {
   --bhoomi-bg: #F4F1EA;        /* Warm Linen */
   --bhoomi-card: #1A2821;      /* Deep Forest */

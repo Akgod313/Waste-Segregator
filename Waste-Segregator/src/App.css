@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  --bhoomi-bg: #F4F1EA;        /* Warm Linen */
+  --bhoomi-card: #1A2821;      /* Deep Forest */
+  --bhoomi-primary: #D4AF37;   /* Matte Gold */
+  --bhoomi-primary-hover: #B5952F; 
+  --bhoomi-text: #F4F1EA;      /* Light text on dark cards */
+  --bhoomi-text-dark: #1A2821; /* Dark text on light background */
+  --bhoomi-border: #2C4035;    
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bhoomi-bg);
+  color: var(--bhoomi-text-dark);
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Typography */
+h1, h2, h3, .brand-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+.card {
+  background: var(--bhoomi-card);
+  color: var(--bhoomi-text);
+  padding: 40px 30px;
+  border-radius: 24px;
+  border: 1px solid var(--bhoomi-border);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 420px;
+}
+
+.brand-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 14px;
+  color: var(--bhoomi-primary);
+  margin-bottom: -10px;
+  display: block;
+}
+
+/* Inputs & Buttons */
+input {
+  width: 85%;
+  padding: 16px;
+  margin: 25px 0;
+  border-radius: 12px;
+  border: 1px solid var(--bhoomi-border);
+  background: rgba(255,255,255,0.05);
+  color: white;
+  font-size: 16px;
+  font-family: 'Outfit', sans-serif;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--bhoomi-primary);
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  background: var(--bhoomi-primary);
+  color: #000;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: var(--bhoomi-primary-hover);
+  transform: translateY(-2px);
+}
+
+/* Game Board */
+.game-board {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.score-board h2, .score-board p {
+  color: var(--bhoomi-text-dark);
+}
+
+.item-stage {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.draggable-item {
+  background: #ffffff;
+  color: #000;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: center;
+  cursor: grab;
+  touch-action: none;
+  z-index: 10;
+  border: 1px solid #EAEAEA;
+}
+
+.draggable-item:active {
+  cursor: grabbing;
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.3);
+}
+
+.item-emoji { font-size: 50px; }
+.draggable-item p { margin: 10px 0 0 0; font-weight: 500; }
+
+.bins-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 15px;
+}
+
+.bin {
+  flex: 1;
+  border: 2px dashed rgba(44, 64, 53, 0.5);
+  background: var(--bhoomi-card);
+  color: var(--bhoomi-text);
+  border-radius: 20px;
+  padding: 25px 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.bin-emoji { font-size: 35px; }
+.bin h4 { margin: 10px 0 0 0; font-size: 15px; font-weight: 500; font-family: 'Outfit', sans-serif; }
+
+/* Lists */
+.review-list, .leaderboard-list {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0;
+  text-align: left;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.review-list li, .leaderboard-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--bhoomi-border);
+}
+
+.correct-ans { border-left: 4px solid var(--bhoomi-primary) !important; }
+.wrong-ans { border-left: 4px solid #EF4444 !important; }
+.review-emoji { font-size: 24px; margin-right: 12px; vertical-align: middle; }
